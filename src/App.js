@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import 'foundation-sites/dist/css/foundation.min.css';
+import './css/openmicroscopy.css';
+import './css/idr.css';
 import Category from './Category';
 import { fetchStudies,
          loadStudiesMapAnnotations,
@@ -10,7 +12,7 @@ function App() {
   const [data, setData] = useState({ studies: [] });
 
   const categories = [
-    {"label": "Most Recent studies", "index": 0, "query": "LAST10:date"},
+    {"label": "Most Recent", "index": 0, "query": "LAST10:date"},
     {"label": "Time-lapse imaging", "index": 1, "query": "Study Type:time OR Study Type:5D OR Study Type:3D-tracking"},
     {"label": "Light sheet fluorescence microscopy", "index": 2, "query": "Study Type:light sheet"},
     {"label": "Protein localization studies", "index": 3, "query": "Study Type:protein localization"},

@@ -9,7 +9,7 @@ function Category({data, studies}) {
   }
   return (
     <div>
-        <h2>{data.label}</h2>
+        <h1>{data.label} ({ categoryStudies.length })</h1>
         <ul>
         {categoryStudies.map(study => (
             <li key={study.objId}>
