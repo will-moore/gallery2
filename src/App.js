@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'foundation-sites/dist/css/foundation.min.css';
 import './css/openmicroscopy.css';
 import './css/idr.css';
+import { ReactComponent as Logo } from './logo-idr.svg';
 import Category from './Category';
 import { fetchStudies,
          loadStudiesMapAnnotations,
@@ -37,6 +38,27 @@ function App() {
 
   return (
     <div>
+      <div class="main-nav-bar top-bar" id="main-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu="219f5j-dropdown-menu" role="menubar">
+            <li role="menuitem">
+              <a class="logo" href="/" tabindex="0">
+                <Logo />
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="/cell/">
+                Cell - IDR
+              </a>
+            </li>
+            <li role="menuitem">
+              <a href="/tissue/">
+                Tissue - IDR
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <h1>Welcome to IDR</h1>
       
       {categories.map(category => (
