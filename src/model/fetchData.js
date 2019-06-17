@@ -1,5 +1,5 @@
 
-let base_url = "http://idr.openmicroscopy.org/";
+let base_url = "http://idr-next.openmicroscopy.org/";
 
 export function getStudyValue(study, key) {
   if (!study.mapValues) return;
@@ -43,7 +43,7 @@ export async function fetchStudies() {
       studies = studies.map(study => {
         study.id = study['@id'];
         study.type = study['@type'].split('#')[1].toLowerCase();
-        study.objId = `${ study.id }-${ study.type }`;
+        study.objId = `${ study.type }-${ study.id }`;
         return study;
       });
       return studies;
@@ -93,4 +93,23 @@ export async function fetchStudies() {
         return studies;
       });
   }
+
+  export async function loadStudiesThumbnails(studies) {
+    let url = base_url + "gallery-api/thumbnails/";
   
+    let toFind = studies.map(study => `${ study.type }=${ study.id }`);
+    return await fetch(url + '?' + toFind.join('&'))
+      .then(response => response.json())
+      .then(data => {
+        return studies.map(study => {
+          // immutable - copy...
+          study = {...study};
+          console.log(study.objId, data[study.objId])
+          if (data[study.objId]) {
+            study.image = data[study.objId].image;
+            study.thumbnail = data[study.objId].thumbnail;
+          }
+          return study;
+        })
+      });
+  }

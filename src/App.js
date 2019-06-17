@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { fetchStudies, loadStudiesMapAnnotations } from './model/fetchData';
+import { fetchStudies,
+         loadStudiesMapAnnotations,
+         loadStudiesThumbnails } from './model/fetchData';
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
       // Load studies, then load map annotations for them
       let studies = await fetchStudies();
       studies = await loadStudiesMapAnnotations(studies);
+      studies = await loadStudiesThumbnails(studies);
       setData({studies});
     };
 
@@ -25,6 +28,7 @@ function App() {
         {data.studies.map(study => (
           <li key={study.objId}>
             {study.Name}
+            {study.thumbnail && <img alt="Study Thumbnail" src={ study.thumbnail } />}
           </li>
         ))}
       </ul>
