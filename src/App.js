@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { fetchStudies } from './model/fetchData';
+import { fetchStudies, loadStudiesMapAnnotations } from './model/fetchData';
 
 function App() {
 
@@ -9,7 +9,9 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
 
+      // Load studies, then load map annotations for them
       let studies = await fetchStudies();
+      studies = await loadStudiesMapAnnotations(studies);
       setData({studies});
     };
 
