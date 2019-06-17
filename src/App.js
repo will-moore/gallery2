@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import 'foundation-sites/dist/css/foundation.min.css';
+import 'foundation-sites/dist/foundation.min.css';
 import './css/openmicroscopy.css';
 import './css/idr.css';
 import { ReactComponent as Logo } from './logo-idr.svg';
@@ -36,6 +36,9 @@ function App() {
     fetchData();
   }, []);
 
+  let hrStyle = {
+    height:0, margin: '8px'
+  }
   return (
     <div>
       <div class="main-nav-bar top-bar" id="main-menu">
@@ -59,7 +62,15 @@ function App() {
           </ul>
         </div>
       </div>
-      <h1>Welcome to IDR</h1>
+      <hr class="whitespace" style={hrStyle} />
+      <div className="row columns text-center">
+        <h1>Welcome to IDR</h1>
+        <p>
+          The Image Data Resource (IDR) is a public repository of image datasets from published scientific studies,
+          <br />
+          where the community can submit, search and access high-quality bio-image data.
+        </p>
+      </div>
       
       {categories.map(category => (
         <Category
