@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './css/foundation.min.css';
 import './css/openmicroscopy.css';
 import './css/idr.css';
+import './css/studies.css';
 import { ReactComponent as Logo } from './logo-idr.svg';
 import Category from './Category';
 import { fetchStudies,
@@ -72,7 +73,7 @@ function App() {
           where the community can submit, search and access high-quality bio-image data.
         </p>
       </div>
-      
+
       <div id="studies" className="row horizontal">
         {categories.map(category => (
           <Category
