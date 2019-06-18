@@ -1,5 +1,5 @@
 
-let base_url = "http://idr-next.openmicroscopy.org/";
+let base_url = "http://idr.openmicroscopy.org/";
 
 export function getStudyValue(study, key) {
   if (!study.mapValues) return;

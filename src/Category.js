@@ -8,16 +8,16 @@ function Category({data, studies}) {
     return <span></span>
   }
   return (
-    <div>
+    <div className="row">
         <h1>{data.label} ({ categoryStudies.length })</h1>
-        <ul>
+        <div className="category">
         {categoryStudies.map(study => (
-            <li key={study.objId}>
+            <div key={study.objId}>
             {study.Name}
             {study.thumbnail && <img alt="Study Thumbnail" src={ study.thumbnail } />}
-            </li>
+            </div>
         ))}
-        </ul>
+        </div>
     </div>
   );
 }

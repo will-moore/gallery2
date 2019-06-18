@@ -42,11 +42,11 @@ function App() {
   }
   return (
     <div>
-      <div class="main-nav-bar top-bar" id="main-menu">
-        <div class="top-bar-left">
-          <ul class="dropdown menu" data-dropdown-menu="219f5j-dropdown-menu" role="menubar">
+      <div className="main-nav-bar top-bar" id="main-menu">
+        <div className="top-bar-left">
+          <ul className="dropdown menu" data-dropdown-menu="219f5j-dropdown-menu" role="menubar">
             <li role="menuitem">
-              <a class="logo" href="/" tabindex="0">
+              <a className="logo" href="/" tabIndex="0">
                 <Logo />
               </a>
             </li>
@@ -63,7 +63,7 @@ function App() {
           </ul>
         </div>
       </div>
-      <hr class="whitespace" style={hrStyle} />
+      <hr className="whitespace" style={hrStyle} />
       <div className="row columns text-center">
         <h1>Welcome to IDR</h1>
         <p>
@@ -73,12 +73,14 @@ function App() {
         </p>
       </div>
       
-      {categories.map(category => (
-        <Category
-          key={category.label}
-          data={category}
-          studies={data.studies} />
-      ))}
+      <div id="studies" className="row horizontal">
+        {categories.map(category => (
+          <Category
+            key={category.label}
+            data={category}
+            studies={data.studies} />
+        ))}
+      </div>
     </div>
   );
 }

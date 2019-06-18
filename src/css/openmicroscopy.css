@@ -14,10 +14,6 @@ hr.whitespace {
     height: 1.875rem;
 }
 
-p.link {
-    /* Liza to add style */
-}
-
 .their-logo, .their-logo:hover {
     border-width: 0px;
     box-shadow: none;
