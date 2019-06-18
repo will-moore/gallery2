@@ -1,5 +1,6 @@
 import React from 'react';
 import { filterStudiesByMapQuery } from './model/fetchData';
+import CategoryStudy from './CategoryStudy';
 
 function Category({data, studies}) {
 
@@ -11,12 +12,13 @@ function Category({data, studies}) {
     <div className="row">
         <h1>{data.label} ({ categoryStudies.length })</h1>
         <div className="category">
-        {categoryStudies.map(study => (
-            <div key={study.objId}>
-            {study.Name}
-            {study.thumbnail && <img alt="Study Thumbnail" src={ study.thumbnail } />}
-            </div>
-        ))}
+          <div>
+            {categoryStudies.map(study => (
+                <CategoryStudy key={study.objId}
+                  study={study}
+                />
+            ))}
+          </div>
         </div>
     </div>
   );
