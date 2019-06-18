@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import 'foundation-sites/dist/foundation.min.css';
+// Use a customised foundation.css - ported from IDR
+import './css/foundation.min.css';
 import './css/openmicroscopy.css';
 import './css/idr.css';
 import { ReactComponent as Logo } from './logo-idr.svg';
