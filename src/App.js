@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Link } from "@reach/router"
 // Use a customised foundation.css - ported from IDR
 import './css/foundation.min.css';
 import './css/openmicroscopy.css';
@@ -18,9 +19,9 @@ function App() {
         <div className="top-bar-left">
           <ul className="dropdown menu" data-dropdown-menu="219f5j-dropdown-menu" role="menubar">
             <li role="menuitem">
-              <a className="logo" href="/" tabIndex="0">
+              <Link to="/" className="logo">
                 <Logo />
-              </a>
+              </Link>
             </li>
             <li role="menuitem">
               <a href="/cell/">
