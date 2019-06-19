@@ -4,7 +4,7 @@ function CategoryStudy({study}) {
 
   let studyStyle = {}
   if (study.thumbnail) {
-    studyStyle['background-image'] = `url("${ study.thumbnail }")`;
+    studyStyle['backgroundImage'] = `url("${ study.thumbnail }")`;
   }
 
   return (
@@ -13,12 +13,12 @@ function CategoryStudy({study}) {
       <div className="studyImage" style={studyStyle}>
         <a target="_blank" href="/webclient/?show=project-801">
           <div>
-            <div class="studyText">
+            <div className="studyText">
               <p title="We provide a user-friendly 3D editing tool to rapidly correct segmentation errors.  We test our method alongside other previously-published user-friendly methods, with focus on mid-gestation embryos, 3D cultures of pluripotent stem cells and pluripotent stem cell-derived neural rosettes.">
                 NesSys: a novel method for accurate nuclear segmentation in 3D
               </p>
             </div>
-            <div class="studyAuthors">
+            <div className="studyAuthors">
               Guillaume Blin, Daina Sadurska, Rosa Portero Migueles, Naiming Chen, Julia A. Watson, Sally Lowell
             </div>
           </div>

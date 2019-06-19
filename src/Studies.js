@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Router, Link } from "@reach/router"
+import { Router } from "@reach/router"
 import Categories from './Categories';
 import Search from './Search';
+import SearchForm from './SearchForm';
 import { fetchStudies,
          loadStudiesMapAnnotations,
          loadStudiesThumbnails } from './model/fetchData';
@@ -24,8 +25,10 @@ function Studies() {
   }, []);
 
   return (
-    <div>
-      <Link to="search">Search</Link>
+    <div className="row column text-center">
+      <SearchForm
+        studies={data.studies}
+      />
       <Router primary={false}>
         <Categories
           path="/"

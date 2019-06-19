@@ -141,6 +141,17 @@
     height: 100%;
     width: 100%;
   }
+  
+  .row .studiesLayout {
+    width: 86%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .studiesLayout .study {
+    width: 247px;
+    height: 247px;
+  }
 
   /* Always show scrollbars https://gist.github.com/IceCreamYou/cd517596e5847a88e2bb0a091da43fb4 */
   ::-webkit-scrollbar-track:vertical {
