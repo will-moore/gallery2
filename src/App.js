@@ -5,7 +5,7 @@ import './css/openmicroscopy.css';
 import './css/idr.css';
 import './css/studies.css';
 import { ReactComponent as Logo } from './logo-idr.svg';
-import Categories from './Categories';
+import Studies from './Studies';
 
 function App() {
 
@@ -45,7 +45,7 @@ function App() {
         </p>
       </div>
 
-      <Categories />
+      <Studies />
     </div>
   );
 }
