@@ -155,3 +155,21 @@ export function getKeyValueAutoComplete(studies, key, inputText) {
     })
     .filter(m => m.value.length > 0);
 }
+
+export function filterStudiesByMaprResponse(studies, data) {
+  // filter studies by 'screens' and 'projects'
+  let imageCounts = {};
+  data.screens.forEach(s => {imageCounts[`screen-${ s.id }`] = s.extra.counter});
+  data.projects.forEach(s => {imageCounts[`project-${ s.id }`] = s.extra.counter});
+
+  let filterFunc = study => {
+    return imageCounts.hasOwnProperty(study.objId);
+  }
+
+  let filteredStudies = studies
+    .filter(filterFunc)
+    .map(study => {
+      return {...study, imageCount: imageCounts[study.objId]}
+    });
+  return filteredStudies;
+}

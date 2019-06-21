@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoryStudy from './CategoryStudy';
+import MaprSearch from './MaprSearch';
 import { filterStudiesByMapQuery } from './model/filterStudies';
 const queryString = require('query-string');
 
@@ -7,7 +8,12 @@ function Search({studies, location}) {
 
   let query = queryString.parse(location.search).query;
 
-  let filteredStudies = filterStudiesByMapQuery(studies, query)
+  if (query.startsWith('mapr_')) {
+    return <MaprSearch
+             studies={studies}
+             query={query} />
+  }
+  let filteredStudies = filterStudiesByMapQuery(studies, query);
 
   return (
     <div className="small-12 small-centered medium-12 medium-centered columns">

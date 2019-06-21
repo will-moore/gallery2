@@ -28,6 +28,7 @@ function SearchForm({studies}) {
     setSearchKey(event.target.value);
     // clear previous search value
     setSearchValue('');
+    setMaprAutocompleteItems([]);
   }
 
   let handleAutocompleteChange = (event, value) => {

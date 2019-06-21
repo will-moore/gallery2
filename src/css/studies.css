@@ -100,6 +100,13 @@
   maprText {
     width: 100%
   }
+
+.filterMessage {
+  font-size: 120%;
+}
+.filterMessage strong {
+  color: #1976d2;
+}
   
   #spinner {
     width: 20px;
@@ -107,6 +114,12 @@
     position: absolute;
     top: 10px;
     right: 25px;
+  }
+
+  .filterspinner {
+    width: 50px;
+    margin: 20px;
+    color: #bbb;
   }
 
   /* from font-awesome */
