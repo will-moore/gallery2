@@ -1,5 +1,5 @@
 import React from 'react';
-import { filterStudiesByMapQuery } from './model/fetchData';
+import { filterStudiesByMapQuery } from './model/filterStudies';
 import CategoryStudy from './CategoryStudy';
 
 function Category({data, studies}) {
