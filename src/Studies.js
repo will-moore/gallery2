@@ -25,7 +25,7 @@ function Studies() {
   }, []);
 
   return (
-    <div className="row column text-center">
+    <div className="row column">
       <SearchForm
         studies={data.studies}
       />
