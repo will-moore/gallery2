@@ -13,7 +13,14 @@ function Search({studies, location}) {
              studies={studies}
              query={query} />
   }
-  let filteredStudies = filterStudiesByMapQuery(studies, query);
+
+  let filteredStudies;
+  if (query.split(':')[0] === 'Name') {
+    let toMatch = query.split(':')[1].toLowerCase();
+    filteredStudies = studies.filter(study => study.Name.toLowerCase().indexOf(toMatch) !== -1);
+  } else {
+    filteredStudies = filterStudiesByMapQuery(studies, query);
+  }
 
   return (
     <div className="small-12 small-centered medium-12 medium-centered columns">
