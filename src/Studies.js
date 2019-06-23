@@ -29,7 +29,7 @@ function Studies() {
       <SearchForm
         studies={data.studies}
       />
-      <Router primary={false}>
+      <Router primary={false} basepath='/idr'>
         <Categories
           path="/"
           studies={data.studies}
