@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Autocomplete from 'react-autocomplete';
-import { navigate } from "@reach/router";
+import { absoluteNavigate as navigate } from "./router/wrappers";
 import { loadMaprAutocomplete } from './model/fetchData';
 
 import { getKeyValueAutoComplete, getStudiesNames } from './model/filterStudies';

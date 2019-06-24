@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "@reach/router"
+import { AbsoluteLink as Link } from './router/wrappers';
 // Use a customised foundation.css - ported from IDR
 import './css/foundation.min.css';
 import './css/openmicroscopy.css';

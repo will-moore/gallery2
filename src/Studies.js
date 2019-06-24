@@ -6,6 +6,7 @@ import SearchForm from './SearchForm';
 import { fetchStudies,
          loadStudiesMapAnnotations,
          loadStudiesThumbnails } from './model/fetchData';
+import { BASEPATH } from './router/wrappers';
 
 function Studies() {
 
@@ -29,7 +30,7 @@ function Studies() {
       <SearchForm
         studies={data.studies}
       />
-      <Router primary={false} basepath='/idr'>
+      <Router primary={false} basepath={BASEPATH}>
         <Categories
           path="/"
           studies={data.studies}
